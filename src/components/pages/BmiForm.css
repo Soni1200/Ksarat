@@ -1,43 +1,105 @@
 .bmiform-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width:100%
-  }
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%
+  /* background-image: url('.public/images/workoutbg3.jpeg'); */
+}
 
-  .bmrform-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width:100%
-  }
+.bmiform-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Change the opacity value to adjust the darkness */
+  z-index: 1;
+}
+
+.error-message{
+  
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  color: #dc1414;
+
+}
+
+
+/* Rest of your CSS code for .bmiform-container goes here */
+
+
+.bmrform-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  /*background-image: url('./images/workoutbg4.jpg');*/
+  background-size: cover;
+}
+
+.bmrform-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Change the opacity value to adjust the darkness */
+  z-index: 1;
+}
 
   .bmiform-container h1{
     margin-top: 2rem;
     font-size: 26px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: rgb(1, 87, 87);
+    color: rgb(255, 128, 55);
+
+  }
+  
+
+  .titletext{
+    margin-top: 2rem;
+    font-size: 26px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(255, 128, 55);
 
   }
 
-  .bmrform-container h1{
+  .text{
     margin-top: 2rem;
     font-size: 26px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: rgb(1, 87, 87);
-
   }
-
   .form-box {
-    background-color: #f2f2f2;
+    background-color: rgba(181, 181, 181, 0.67);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 2px 2px 5px #ccc;
     max-width: 500px;
     margin-top: 2rem;
     margin-bottom: 2rem;
     width: 50%;
     align-items: 'center';
+    z-index: 2;
+  }
+
+  .resulttext{
+    font-size: 26px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(255, 128, 55);
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .resulttext2{
+    margin-top: 2rem;
+    font-size: 26px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(255, 128, 55);
+    margin-bottom: 0.5rem;
   }
   
   .form-group {
@@ -49,8 +111,9 @@
 
   .form-label1 {
     font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
     display: inline-block;
-    font-size: 16px;
+    font-size: 17px;
     margin-bottom: 8px;
     color: #180606;
   }
@@ -60,7 +123,12 @@
     padding: 10px;
     font-size: 16px;
     margin-bottom: 0.5rem;
-    width: 80%;
+    /* width: 80%; */
+    text-align: center;
+  }
+
+  .option{
+    text-align: justify;
   }
 
   .btn-form{
@@ -68,5 +136,39 @@
     justify-content: center;
   }
 
-  
+.pie{
+  z-index: 2;
+  margin-bottom: 50px;
+}
+
+.recommend{
+  margin-bottom: 40px;
+}
+
+.loading-animation{
+  margin-bottom: 2rem;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-size: 26px;
+}
+
+.loading-animation {
+  animation: blink 1s infinite;
+}
+.table-container{
+  z-index: 2;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.2;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
   
