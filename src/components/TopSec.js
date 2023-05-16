@@ -2,7 +2,6 @@ import React from 'react';
 import '../App.css';
 import './TopSec.css';
 import './Button.css';
-import { Link } from 'react-router-dom';
 
 const STYLES = ['btn--primary', 'btn--outline','btn--custom1','btn--custom2','btn--custom3'];
 const SIZES = ['btn--medium', 'btn--large'];
@@ -19,17 +18,18 @@ const Button = ({
     : STYLES[0];
 
   const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
-
+  const handleButtonClick = () => {
+    window.location.href = '/programs';
+  };
   return (
-    <Link to='/' className='btn-mobile'>
       <button
         className={`btn ${checkButtonStyle} ${checkButtonSize}`}
-        onClick={onClick}
+        onClick={handleButtonClick}
         type={type}
       >
         {children}
       </button>
-    </Link>
+  
   );
 };
 
@@ -42,7 +42,7 @@ function TopSec() {
       <p>What Are You Waiting For?</p>
       <div className = 'top-btn'>
         <Button className = 'btns' buttonStyle= 'btn--outline' buttonSize= 'btn--large'>
-        Here's A Demo <i className='far fa-play-circle'/>
+        Our Services <i className='far fa-play-circle'/>
         </Button>
       </div>
     </div>
