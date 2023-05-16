@@ -12,15 +12,18 @@ const Form = () => {
   };
 
   return (
+    <div className='overall'>
     <>
-    <div className='heading'>
-  <h1>KASRAT</h1>
-  <h3>The Perfect Workout and Diet Plan Generator</h3>
-</div>
+    
+    
 
       <div className='form-container'>
-        <span className='close-btn'>×</span>
-        <div className='form-content-left'>
+     
+          <div className='form-content-left'>
+          <div className='heading'>
+  <h1>KASRAT</h1>
+  <h3>Don't Sit, Get Fit!</h3>
+</div>
           <img className='form-img' src='images/img-2.svg' alt='spaceship' />
         </div>
         
@@ -31,6 +34,7 @@ const Form = () => {
         )}
       </div>
     </>
+    </div>
   );
 };
 
