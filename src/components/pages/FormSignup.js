@@ -57,7 +57,7 @@ const FormSignup = ({ submitForm }) => {
             type='password'
             name='password2'
             placeholder='Confirm your password'
-            value={values.password2}
+            value={values.confirmpassword}
             onChange={handleChange}
           />
           {errors.password2 && <p>{errors.password2}</p>}
