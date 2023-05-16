@@ -39,7 +39,7 @@ const BMRvalidateInfo = (values) => {
   if (!values.height.trim()) {
     errors.height = 'Height required';
   } else if (Number(values.height) >= 251) {
-    errors.height = 'Enter appropriate height in meters';
+    errors.height = 'Enter appropriate height in centimeters';
   } 
   
   if (!values.weight.trim()) {
@@ -53,10 +53,18 @@ const BMRvalidateInfo = (values) => {
     errors.age = 'Age required';
   } else if (Number(values.age) >= 80) {
     errors.age = 'Enter appropriate age';
+  } else if (Number(values.age) <= 10) {
+    errors.age = 'Enter appropriate age';
   } 
+
+  if (!values.lifestyle==='Select a Lifestyle') {
+    errors.lifestyle = 'Please select a lifestyle';
+  }
+  
   if (!values.bodyfat.trim()) {
     errors.bodyfat = 'Bodyfat required';
   }
+
   return errors;
 };
 
@@ -236,19 +244,22 @@ class BmrForm extends Component {
                {errors.weight && <span className="error-message">{errors.weight}</span>}
         
               <div className="form-group">
-                <label className='form-label1'> Lifestyle : </label>
+                <label className='form-label1' > Lifestyle : </label>
                 <select
                   className="form-input1"
                   name='lifestyle'
                   value={this.state.lifestyle}
                   onChange={this.handleLifestyleChange}
                 >
-                  <option value="" className='option'>Select a lifestyle</option>
+                  <option value="" disabled selected hidden>
+                  Select a Lifestyle
+                  </option>
                   <option value="s" className='option'>Sedentary</option>
                   <option value="la" className='option'>Lightly active</option>
                   <option value="ma" className='option'>Moderately active</option>
                   <option value="ha" className='option'>Very active</option>
                 </select>
+                {errors.lifestyle && <span className="error-message">{errors.lifestyle}</span>} 
               </div>
               <div className="form-group">
                 <label className='form-label1'> Gender : </label>
@@ -258,7 +269,9 @@ class BmrForm extends Component {
                   value={this.state.gender}
                   onChange={this.handleGenderChange}
                 >
-                  <option value="" className='option'>Select Gender</option>
+                  <option value="" disabled selected hidden>
+                  Select Gender
+                  </option>
                   <option value="male" className='option'>Male</option>
                   <option value="female" className='option'>Female</option>
                 </select>
@@ -271,6 +284,7 @@ class BmrForm extends Component {
                   name='bodyfat'
                   value={this.state.bodyfat}
                   onChange={this.handleBodyfatChange}
+                  placeholder='Enter Bodyfat'
                 />
                 {errors.bodyfat && <span className="error-message">{errors.bodyfat}</span>}
               </div>
@@ -282,7 +296,9 @@ class BmrForm extends Component {
                   value={this.state.experience}
                   onChange={this.handleExperienceChange}
                 >
-                  <option value="" className='option'>Select Your Experience Level</option>
+                  <option value="" disabled selected hidden>
+                  Select Your Experience Level
+                  </option>
                   <option value="b" className='option'>Begineer</option>
                   <option value="i" className='option'>Intermediate</option>
                   <option value="a" className='option'>Advanced</option>
@@ -301,7 +317,7 @@ class BmrForm extends Component {
           
                 <label className='form-label1'> Goal : </label>
                 <select
-                id="Soni1"
+                id="Select1"
                 className="form-input1"
                 name='goal'
                 value={this.state.goal}
