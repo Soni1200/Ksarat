@@ -2,18 +2,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 .heading h1 {
   font-size: 3.5rem;
-  
 }
 
 .heading h3 {
   font-size: 1rem;
  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: #12573c;
+  color: #f9f9f9;
+  margin-bottom: 2rem;
 }
 
 
