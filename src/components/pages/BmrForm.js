@@ -35,7 +35,6 @@ const Button = ({
 
 const BMRvalidateInfo = (values) => {
   let errors = {};
-
   if (!values.height.trim()) {
     errors.height = 'Height required';
   } else if (Number(values.height) >= 251) {
@@ -56,18 +55,15 @@ const BMRvalidateInfo = (values) => {
   } else if (Number(values.age) <= 10) {
     errors.age = 'Enter appropriate age';
   } 
-
-  if (!values.lifestyle==='Select a Lifestyle') {
+  if (!(values.lifestyle === 'Select a Lifestyle')) {
     errors.lifestyle = 'Please select a lifestyle';
   }
-  
+    
   if (!values.bodyfat.trim()) {
     errors.bodyfat = 'Bodyfat required';
   }
-
   return errors;
 };
-
 
 class BmrForm extends Component {
   constructor(props) {
@@ -81,7 +77,8 @@ class BmrForm extends Component {
       bodyfat: '',
       experience: '',
       goal: '',
-      errors: {},	
+      errors: {},
+      
 
     };
   }
@@ -94,6 +91,7 @@ class BmrForm extends Component {
       this.setState({ errors });
       return;
     }
+
 
     console.log('Height:', this.state.height);
     console.log('Weight:', this.state.weight);
@@ -205,7 +203,7 @@ class BmrForm extends Component {
       <>
         <Navbar />
         <div className="bmrform-container">
-          <h1 className="titletext">Calories Counter</h1>
+          <h1 className='titletext'>Calories Counter</h1>
           <form className="form-box" onSubmit={this.handleSubmit}>
             <div className="form-group">
               <label className='form-label1'> Height (in cm) : </label>
@@ -217,7 +215,7 @@ class BmrForm extends Component {
                 onChange={this.handleHeightChange}
                 placeholder='Enter your height in cm'
               />
-               {errors.height && <span className="error-message">{errors.height}</span>}
+              {errors.height && <span className="error-message">{errors.height}</span>}
             </div>
             <div className="form-group">
               <label className='form-label1'> Age : </label>
@@ -229,7 +227,7 @@ class BmrForm extends Component {
                 onChange={this.handleAgeChange}
                 placeholder='Enter your age'
               />
-               {errors.age && <span className="error-message">{errors.age}</span>}
+              {errors.age && <span className="error-message">{errors.age}</span>}
             </div>
             <div className="form-group">
               <label className='form-label1'> Weight (in Kg) : </label>
@@ -242,9 +240,9 @@ class BmrForm extends Component {
                 placeholder='Enter your weight in kg'
               />
                {errors.weight && <span className="error-message">{errors.weight}</span>}
-        
+               </div>
               <div className="form-group">
-                <label className='form-label1' > Lifestyle : </label>
+                <label className='form-label1'> Lifestyle : </label>
                 <select
                   className="form-input1"
                   name='lifestyle'
@@ -269,7 +267,7 @@ class BmrForm extends Component {
                   value={this.state.gender}
                   onChange={this.handleGenderChange}
                 >
-                  <option value="" disabled selected hidden>
+                   <option value="" disabled selected hidden>
                   Select Gender
                   </option>
                   <option value="male" className='option'>Male</option>
@@ -304,8 +302,7 @@ class BmrForm extends Component {
                   <option value="a" className='option'>Advanced</option>
                 </select>
               </div>
-            
-            </div>
+              
             <div className='btn-form'>
               <Button buttonStyle='btn--custom1'>Submit</Button>
             </div>
