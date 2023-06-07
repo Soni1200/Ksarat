@@ -3,11 +3,36 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%
-  /* background-image: url('.public/images/workoutbg3.jpeg'); */
+  width: 100%;
+  background: url('C:\Users\basne\OneDrive\Desktop\SSB REACT FINAL\Ksarat\src\images\workoutbg3.jpeg');
 }
 
 .bmiform-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Change the opacity value to adjust the darkness */
+  z-index: 1;
+}
+
+
+/* Rest of your CSS code for .bmiform-container goes here */
+
+
+.bmrform-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background: url('C:\Users\basne\OneDrive\Desktop\SSB REACT FINAL\Ksarat\src\images\workoutbg4.jpg');
+  background-size: cover;
+}
+
+.bmrform-container::before {
   content: "";
   position: absolute;
   top: 0;
@@ -23,32 +48,6 @@
   font-size: 0.8rem;
   margin-top: 0.5rem;
   color: #dc1414;
-
-}
-
-
-/* Rest of your CSS code for .bmiform-container goes here */
-
-
-.bmrform-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  /*background-image: url('./images/workoutbg4.jpg');*/
-  background-size: cover;
-}
-
-.bmrform-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6); /* Change the opacity value to adjust the darkness */
-  z-index: 1;
 }
 
   .bmiform-container h1{
@@ -115,9 +114,7 @@
     display: inline-block;
     font-size: 17px;
     margin-bottom: 8px;
- 
     color: #180606;
-  
   }
 
   .form-label2{
@@ -135,6 +132,8 @@
 #Select1{
   -webkit-appearance: none;
 }
+  
+ 
   .form-input1 {
     padding: 10px;
     font-size: 16px;
@@ -174,6 +173,11 @@
 }
 .table-container{
   z-index: 2;
+}
+.btn-form-pdf{
+  display: flex;
+    justify-content: center;
+  margin-top: 8px;
 }
 
 @keyframes blink {
